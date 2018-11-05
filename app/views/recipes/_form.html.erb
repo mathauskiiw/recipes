@@ -1,0 +1,40 @@
+<div class="container">
+<%= form_with(model: recipe, local: true) do |form| %>
+  <% if recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="dropdown col-md-3">
+    <%= form.label "Categoria" %><br>
+    <%= form.select :category_id, options_from_collection_for_select(Category.all, :id, :name, @recipe.category_id), {}, class: "form-control form-control-line" %>
+  </div>
+
+  <div class="form col-md-3">
+    <%= form.label "Título" %><br>
+    <%= form.text_field :title, class: "form-control form-control-line"%>
+  </div>
+
+  <div class="form col-md-1">
+    <%= form.label "Postar" %><br>
+    <input class="btn btn-primary" type="submit" value="Postar">
+  </div>
+
+  <div class="form col-md-1">
+    <%= form.label "Cancelar" %><br>
+    <a class="btn btn-danger" href="recipes" role="button">Cancelar</a>
+  </div><br><br><br><br>
+
+  <div class="form col-md-3">
+    <%= form.label "Modo de preparo" %><br>
+    <%= form.text_area :body, class: "form-control form-control-line" %>
+  </div>
+<% end %>
+</div>
