@@ -21,10 +21,9 @@
         <td><%= recipe.title %></td>
         <td><%= recipe.category.name %></td>
         <td><%= recipe.body %></td>
-        <td><%= recipe.author.name %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= recipe.user.name %></td>
+        <td><%= link_to 'Editar', edit_recipe_path(recipe) %></td>
+        <td><%= link_to 'Excluir', recipe, method: :delete, data: { confirm: 'Tem certeza que desja excluir esta receita?' } %></td>
       </tr>
     <% end %>
   </tbody>

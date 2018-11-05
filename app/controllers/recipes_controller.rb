@@ -10,7 +10,7 @@ class RecipesController < InheritedResources::Base
 
   def create
     @recipe = Recipe.new recipe_params
-    @recipe.user_id = current_user
+    @recipe.user = current_user
     if @recipe.save
       redirect_to root_path, notice: "Receita salva com sucesso!"
     else
@@ -43,7 +43,7 @@ class RecipesController < InheritedResources::Base
   private
 
     def recipe_params
-      params.require(:recipe).permit(:title, :body, :category_id)
+      params.require(:recipe).permit(:title, :body, :user_id, :category_id)
     end
 
 end
