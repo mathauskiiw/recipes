@@ -1,29 +1,18 @@
 <div class="container">
-<h2>Login</h2>
+<h2>Entrar</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form col-md-3">
+
+  <div class="form col-md-3"><br />
     <%= f.label "email" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-line" %>
   </div>
 
-  <div class="form col-md-3">
+  <div class="form col-md-3"><br />
     <%= f.label "senha" %><br />
     <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-line" %>
   </div>
 
-  <div class="form col-md-1">
-    <%= f.label "Login" %><br>
-    <input class="btn btn-primary" type="submit" value="Entrar">
-  </div>
-
-  <div class="form col-md-2">
-    <%= f.label "Não é membro?" %><br>
-    <a class="btn btn-success" <%= link_to "Cadastre-se", new_user_registration_path %></a>
-  </div>
-
-
-<br /><br /><br /><br />
   <% if devise_mapping.rememberable? -%>
     <div class="form col-md-3">
       <%= f.check_box :remember_me %>
@@ -31,7 +20,13 @@
     </div>
   <% end -%>
 
+  <div class="form col-md-1"><br />
+    <input class="btn btn-primary" type="submit" value="Entrar">
+  </div>
 
+  <div class="form col-md-2"><br />
+    <a class="btn btn-success" <%= link_to "Cadastre-se", new_user_registration_path %></a>
+  </div>
 
 <% end %>
 </div>

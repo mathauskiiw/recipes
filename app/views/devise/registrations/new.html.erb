@@ -1,43 +1,43 @@
+<div class="container">
 <h2>Cadastro</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="form col-md-3" >
-    <%= f.label :email %>
+  <div class="form col-md-3" ><br>
+    <%= f.label :email %><br>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-line" %>
   </div>
 
-  <div class="form col-md-3">
-    <%= f.label "Nome" %>
+  <div class="form col-md-3"><br>
+    <%= f.label "Nome" %><br>
     <%= f.text_field :name, autocomplete: "name", class: "form-control form-control-line" %>
   </div>
 
-  <div class="form col-md-3">
-    <%= f.label "senha" %>
+  <div class="form col-md-3"><br>
+    <%= f.label "senha" %><br>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> caracteres no mínimo)</em>
     <% end %>
     <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-line" %>
   </div>
 
-  <div class="form col-md-3">
-    <%= f.label "confirmar senha" %>
+  <div class="form col-md-3"><br>
+    <%= f.label "confirmar senha" %><br>
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-line" %>
-  </div><br><br><br><br>
+  </div>
 
-  <div class="dropdown col-md-3">
-    <%= f.label "Nível" %>
+  <div class="dropdown col-md-3"><br>
+    <%= f.label "Nível" %><br>
     <%= f.select :level_id, options_from_collection_for_select(Level.all, :id, :name, @user.level_id), {}, class: "form-control form-control-line" %>
   </div>
 
-  <div class="form col-md-1">
-    <%= f.label "Cadastrar" %><br>
+  <div class="form col-md-1"><br>
     <input class="btn btn-primary" type="submit" value="Confirmar">
   </div>
 
-  <div class="form col-md-1">
-    <%= f.label "Cancelar" %><br>
+  <div class="form col-md-1"><br>
     <a class="btn btn-danger" <%= link_to "Cancelar", new_user_session_path %></a>
   </div>
 <% end %>
+</div>
