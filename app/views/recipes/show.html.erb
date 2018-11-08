@@ -1,28 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Título:</strong>
-  <%= @recipe.title %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Modo de preparo:</strong>
-  <%= @recipe.body %>
-</p>
+  <h2><%= @recipe.title %></h2>
 
-<p>
-  <strong>Autor:</strong>
-  <%= @recipe.user.name %>
-</p>
+  <p><br>
+    <strong>Ingredientes:</strong>
+    <% for @ingredient in @recipe.ingredients %>
+      <ul>
+        <li><%= @ingredient.name %> : <%= @ingredient.quantity %></li>
+      </ul>
+    <% end %>
+  </p>
 
-<p>
-  <strong>Ingredientes:</strong>
-  <% for @ingredient in @recipe.ingredients %>
-    <ul>
-      <li><%= @ingredient.name %> : <%= @ingredient.quantity %></li>
-    </ul>
-  <% end %>
-</p>
+  <p><br>
+    <strong>Modo de preparo:</strong>
+    <%= @recipe.body %>
+  </p>
 
-<a class="btn btn-primary" <%= link_to 'Editar', edit_recipe_path(@recipe) %></a>
-<a class="btn btn-danger" <%= link_to 'Voltar', recipes_path %></a>
+  <p><br>
+    <strong>Autor:</strong>
+    <%= @recipe.user.name %>
+  </p>
+
+  <a class="btn btn-primary" <%= link_to 'Editar', edit_recipe_path(@recipe) %></a>
+  <a class="btn btn-danger" <%= link_to 'Voltar', recipes_path %></a>
+
+</div>
