@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'home/index'
   devise_for :users
 
-  root to: 'recipes#index'
+  get 'home/index'
+  root to: 'home#index'
 
   resources :levels
 
