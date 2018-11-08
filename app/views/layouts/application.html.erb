@@ -20,26 +20,15 @@
 
   <body id="page-top">
 
-    <!-- Page Preloder -->
-  	<div id="preloder">
-  		<div class="loader"></div>
-  	</div>
+
 
   	<!-- Header section -->
   	<header class="header-section">
-  		<div class="header-top">
-  			<div class="container">
-  				<div class="header-social">
-  					<a class="btn" href="https://www.instagram.com" target="_blank" role="button">@Siga nosso instagram!</a>
-  				</div>
-  				<div class="user-panel">
-  					<ul class="user-buttons">
-  				    <li><a class="btn" href="#" role="button">Login</a></li>
-  						<li><a class="btn" href="#" role="button">Cadastre-se</a></li>
-  					</ul>
-  				</div>
-  			</div>
-  		</div>
+      <% if current_user %>
+        <%= render "layouts/navbarlogout" %>
+      <% else %>
+        <%= render "layouts/navbarlogin" %>
+      <% end %>
   		<div class="header-bottom">
   			<div class="container">
   				<a href="#" class="site-logo">
