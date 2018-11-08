@@ -22,6 +22,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
 gem 'execjs'
 
+gem 'nested_form_fields'
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
