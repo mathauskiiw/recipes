@@ -1,18 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Título:</strong>
   <%= @recipe.title %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>Modo de preparo:</strong>
   <%= @recipe.body %>
 </p>
 
 <p>
-  <strong>Author:</strong>
+  <strong>Autor:</strong>
   <%= @recipe.user.name %>
 </p>
+
+<p>
+  <strong>Ingredientes:</strong>
+  <% for @ingredient in @recipe.ingredients %>
+    <ul>
+      <li><%= @ingredient.name %> : <%= @ingredient.quantity %></li>
+    </ul>
+  <% end %>
+</p>
+
 <a class="btn btn-primary" <%= link_to 'Editar', edit_recipe_path(@recipe) %></a>
-<a class="btn btn-danger" <%= link_to 'Cancelar', recipes_path %></a>
+<a class="btn btn-danger" <%= link_to 'Voltar', recipes_path %></a>

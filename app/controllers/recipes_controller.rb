@@ -43,7 +43,7 @@ class RecipesController < InheritedResources::Base
   private
 
     def recipe_params
-      params.require(:recipe).permit(:title, :body, :user_id, :category_id)
+      params.require(:recipe).permit(:title, :body, :user_id, :category_id, ingredients_attributes:[:id, :name, :quantity, :_destroy])
     end
 
 end
