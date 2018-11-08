@@ -38,6 +38,6 @@
 
   <div class="form col-md-1">
     <%= f.label "Cancelar" %><br>
-    <a class="btn btn-danger" href="sign_in" role="button">Cancelar</a>
+    <a class="btn btn-danger" <%= link_to "Cancelar", new_user_session_path %></a>
   </div>
 <% end %>

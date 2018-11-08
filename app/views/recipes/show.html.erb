@@ -14,6 +14,5 @@
   <strong>Author:</strong>
   <%= @recipe.user.name %>
 </p>
-
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<a class="btn btn-primary" <%= link_to 'Editar', edit_recipe_path(@recipe) %></a>
+<a class="btn btn-danger" <%= link_to 'Cancelar', recipes_path %></a>

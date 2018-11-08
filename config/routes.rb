@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   root to: 'recipes#index'
 
-  get 'levels/new'
-
   resources :levels
+
+  resources :categories
 
   resources :recipes
 
