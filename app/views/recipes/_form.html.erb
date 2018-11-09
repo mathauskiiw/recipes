@@ -24,11 +24,11 @@
 
   <div class="form col-md-3"><br>
     <%= form.nested_fields_for :ingredients do |ingredient| %>
+      <%= ingredient.remove_nested_fields_link %>
       <%= form.label "Ingrediente" %><br>
       <%= ingredient.text_field :name, class: "form-control form-control-line" %>
       <%= form.label "Quantidade" %><br>
       <%= ingredient.text_field :quantity, class: "form-control form-control-line" %>
-      <%= ingredient.remove_nested_fields_link %>
     <% end %>
     <%= form.add_nested_fields_link :ingredients %>
   </div>

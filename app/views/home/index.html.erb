@@ -20,11 +20,16 @@
 <!-- Hero section end -->
 
 <!-- Search section -->
+
 <div class="search-form-section">
   <div class="sf-warp">
     <div class="container">
       <form class="big-search-form">
         <select>
+          <option>Ingredientes</option>
+          <option>Breakfast</option>
+          <option>Lunch</option>
+          <option>Dinner</option>
         </select>
         <select>
           <option>Ingredientes</option>
@@ -32,8 +37,10 @@
           <option>Lunch</option>
           <option>Dinner</option>
         </select>
-        <input type="text" placeholder="Buscar Receitas">
-        <button class="bsf-btn">Buscar</button>
+        <%= form_tag(root_path, method: :post) do %>
+          <%= text_field_tag :title %>
+          <button class="bsf-btn" type="submit">Buscar</button>
+        <% end %>
       </form>
     </div>
   </div>
@@ -111,6 +118,39 @@
   <div class="container">
     <div class="section-title">
       <h2>Receitas</h2>
+      <br>
+
+      <div class="row">
+        <% @recipes.each do |recipe| %>
+
+        <div class="col-lg-4">
+          <div class="sp-blog-item h-100">
+            <div class="blog-thubm">
+              <img src="img/blog/entrada.jpg" alt="">
+              <div class="blog-date">
+                <span><%= recipe.title %></span>
+              </div>
+            </div>
+            <div class="blog-text">
+              <span><h4><%= recipe.title %></h4></span><hr />
+              <p><br>
+                <strong>Ingredientes:</strong>
+                <% for @ingredient in recipe.ingredients %>
+                  <ul>
+                    <li><%= @ingredient.name %> : <%= @ingredient.quantity %></li>
+                  </ul>
+                <% end %>
+              </p>
+              <span>Por: <%= recipe.user.name %></span>
+
+            </div>
+            <%= link_to ">", recipe_path(recipe), class: "readmore" %>
+          </div>
+        </div>
+
+        <% end %>
+      </div>
+
     </div>
   </div>
 </section>

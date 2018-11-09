@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'home/index'
-  root to: 'home#index'
+  get "home/index"
+  root "home#index"
+  root "home#index", via: :post
 
   resources :levels
 
