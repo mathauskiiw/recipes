@@ -23,7 +23,10 @@
     <%= @recipe.user.name %>
   </p>
 
-  <a class="btn btn-primary" <%= link_to 'Editar', edit_recipe_path(@recipe) %></a>
-  <a class="btn btn-danger" <%= link_to 'Voltar', root_path %></a>
+  <% if current_user && current_user.id == @recipe.user_id %>
+    <a class="btn btn-primary" <%= link_to 'Editar', edit_recipe_path(@recipe) %></a>
+    <a class="btn btn-danger"<%= link_to 'Excluir', @recipe, method: :delete, data: { confirm: 'Tem certeza que desja excluir esta receita?' } %></a>
+  <% end %>
+  <a class="btn btn-primary" <%= link_to 'Voltar', root_path %></a>
 
 </div>

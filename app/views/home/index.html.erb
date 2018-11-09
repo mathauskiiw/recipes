@@ -19,36 +19,6 @@
 </section>
 <!-- Hero section end -->
 
-<!-- Search section -->
-
-<div class="search-form-section">
-  <div class="sf-warp">
-    <div class="container">
-      <form class="big-search-form">
-        <select>
-          <option>Ingredientes</option>
-          <option>Breakfast</option>
-          <option>Lunch</option>
-          <option>Dinner</option>
-        </select>
-        <select>
-          <option>Ingredientes</option>
-          <option>Breakfast</option>
-          <option>Lunch</option>
-          <option>Dinner</option>
-        </select>
-        <%= form_tag(root_path, method: :post) do %>
-          <%= text_field_tag :title %>
-          <button class="bsf-btn" type="submit">Buscar</button>
-        <% end %>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- Search section end -->
-
-<br><br><br><br>
 
 <!-- Tips of the day section -->
 <section class="bottom-widgets-section spad">
@@ -111,6 +81,36 @@
 </section>
 <!-- Tips of the day section end -->
 
+
+<!-- Search section -->
+
+<div class="search-form-section">
+  <div class="sf-warp">
+    <div class="container">
+      <form class="big-search-form">
+        <select>
+          <option>Ingredientes</option>
+          <option>Breakfast</option>
+          <option>Lunch</option>
+          <option>Dinner</option>
+        </select>
+        <select>
+          <option>Ingredientes</option>
+          <option>Breakfast</option>
+          <option>Lunch</option>
+          <option>Dinner</option>
+        </select>
+        <%= form_tag(root_path, method: :post) do %>
+          <%= text_field_tag :title %>
+          <button class="bsf-btn" type="submit">Buscar</button>
+        <% end %>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Search section end -->
+
 <br><br><br><br>
 
 <!-- Recipes section -->
@@ -126,7 +126,7 @@
         <div class="col-lg-4">
           <div class="sp-blog-item h-100">
             <div class="blog-thubm">
-              <img src="img/blog/entrada.jpg" alt="">
+              <img src="img/blog/blog.jpg" alt="">
               <div class="blog-date">
                 <span><%= recipe.title %></span>
               </div>
@@ -211,9 +211,9 @@
       </div>
       <div class="col-lg-6 text-lg-right">
         <ul class="footer-menu">
-          <li><a href="">Início</a></li>
-          <li><a href="">Buscar</a></li>
-          <li><a href="">Postagens</a></li>
+          <li><a href="http://localhost:3000">Início</a></li>
+          <li><a href="http://localhost:3000">Buscar</a></li>
+          <li><a href="http://localhost:3000">Postagens</a></li>
         </ul>
 
       </div>
