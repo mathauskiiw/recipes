@@ -123,30 +123,30 @@
       <div class="row">
         <% @recipes.each do |recipe| %>
 
-        <div class="col-lg-4">
-          <div class="sp-blog-item h-100">
-            <div class="blog-thubm">
-              <img src="img/blog/blog.jpg" alt="">
-              <div class="blog-date">
-                <span><%= recipe.title %></span>
+          <div class="col-lg-4">
+            <div class="sp-blog-item h-100">
+              <div class="blog-thubm">
+                <img src="img/blog/blog.jpg" alt="">
+                <div class="blog-date">
+                  <span><%= recipe.title %></span>
+                </div>
               </div>
-            </div>
-            <div class="blog-text">
-              <span><h4><%= recipe.title %></h4></span><hr />
-              <p><br>
-                <strong>Ingredientes:</strong>
-                <% for @ingredient in recipe.ingredients %>
-                  <ul>
-                    <li><%= @ingredient.name %> : <%= @ingredient.quantity %></li>
-                  </ul>
-                <% end %>
-              </p>
-              <span>Por: <%= recipe.user.name %></span>
+              <div class="blog-text">
+                <span><h4><%= recipe.title %></h4></span><hr />
+                <p><br>
+                  <strong>Ingredientes:</strong>
+                  <% for @ingredient in recipe.ingredients %>
+                    <ul>
+                      <li><%= @ingredient.name %> : <%= @ingredient.quantity %></li>
+                    </ul>
+                  <% end %>
+                </p>
+                <span>Por: <%= recipe.user.name %></span>
 
+              </div>
+              <%= link_to ">", recipe_path(recipe), class: "readmore" %>
             </div>
-            <%= link_to ">", recipe_path(recipe), class: "readmore" %>
           </div>
-        </div>
 
         <% end %>
       </div>
