@@ -6,10 +6,25 @@ ActiveAdmin.register Recipe do
 #
 # or
 #
-  permit_params do
-    permitted = [:permitted, :attributes]
-    permitted << :other if params[:action] == 'create' && current_user.admin?
-    permitted
-  end
+# permit_params do
+#  permitted = [:permitted, :attributes]
+#  permitted << :other if params[:action] == 'create' && current_user.admin?
+#  permitted
+# end
+
+permit_params :title, :category, :body, :user, :created_at
+  actions :all
+
+  index do
+    selectable_column
+    column :title
+    column :category
+    column :body
+    column :user
+    column :created_at, null: false
+    actions
+end
+
+
 
 end
