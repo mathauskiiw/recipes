@@ -10,7 +10,12 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :recipes
+  resources :recipes do
+    member do
+      put "like" => "recipes#upvote"
+      put "deslike" => "recipes#downvote"
+    end
+  end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

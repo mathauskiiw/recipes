@@ -16,6 +16,8 @@ gem 'activeadmin'
 
 gem 'devise'
 
+gem 'acts_as_votable'
+
 gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'

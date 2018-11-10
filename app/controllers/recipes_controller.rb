@@ -1,5 +1,6 @@
 class RecipesController < InheritedResources::Base
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
     @recipes = Recipe.all
@@ -40,7 +41,23 @@ class RecipesController < InheritedResources::Base
     redirect_to root_url, notice: "Receita removida!"
   end
 
+  #upvote_from user
+  #downvote_from user
+  def upvote
+    @recipe.upvote_from current_user
+    redirect_to root_path
+  end
+
+  def downvote
+    @recipe.downvote_from current_user
+    redirect_to root_path
+  end
+
   private
+
+    def set_recipe
+      @recipe = Recipe.find(params[:id])
+    end
 
     def recipe_params
       params.require(:recipe).permit(:title, :body, :user_id, :category_id, ingredients_attributes:[:id, :name, :quantity, :_destroy])

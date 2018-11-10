@@ -133,6 +133,20 @@
               </div>
               <div class="blog-text">
                 <span><h4><%= recipe.title %></h4></span><hr />
+
+                <div class="button">
+                  <%= link_to like_recipe_path(recipe), class: "like", method: :put do %>
+                    <button type="button" class="btn btn-primary">
+                      <span class="fa fa-arrow-up"> Like</span>
+                      <a class="badge"><%= recipe.get_upvotes.size %></a>
+                  <% end %>
+                  <%= link_to deslike_recipe_path(recipe), class: "like", method: :put do %>
+                    <button type="button" class="btn btn-primary">
+                      <span class="fa fa-arrow-down"> Deslike</span>
+                      <a class="badge"><%= recipe.get_downvotes.size %></a>
+                  <% end %>
+                </div><hr />
+
                 <p><br>
                   <strong>Ingredientes:</strong>
                   <% for @ingredient in recipe.ingredients %>
@@ -142,9 +156,9 @@
                   <% end %>
                 </p>
                 <span>Por: <%= recipe.user.name %></span>
-
               </div>
               <%= link_to ">", recipe_path(recipe), class: "readmore" %>
+
             </div>
           </div>
 
