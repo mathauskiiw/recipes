@@ -134,16 +134,14 @@
               <div class="blog-text">
                 <span><h4><%= recipe.title %></h4></span><hr />
 
-                <div class="button">
+                <div class="rating">
                   <%= link_to like_recipe_path(recipe), class: "like", method: :put do %>
-                    <button type="button" class="btn btn-primary">
-                      <span class="fa fa-arrow-up"> Like</span>
-                      <a class="badge"><%= recipe.get_upvotes.size %></a>
+                      <i class="fa fa-thumbs-up"> Like</i>
+                      <a class="badge badge-primary"><%= recipe.get_upvotes.size %></a>
                   <% end %>
-                  <%= link_to deslike_recipe_path(recipe), class: "like", method: :put do %>
-                    <button type="button" class="btn btn-primary">
-                      <span class="fa fa-arrow-down"> Deslike</span>
-                      <a class="badge"><%= recipe.get_downvotes.size %></a>
+                  <%= link_to deslike_recipe_path(recipe), class: "deslike", method: :put do %>
+                      <i class="fa fa-thumbs-down"> Deslike</i>
+                      <a class="badge badge-danger"><%= recipe.get_downvotes.size %></a>
                   <% end %>
                 </div><hr />
 
@@ -160,7 +158,6 @@
                 <% if recipe.cached_votes_score == -2 %>
                   <%= render "layouts/notaccepted" %>
                 <% end %>
-
 
               </div>
               <%= link_to ">", recipe_path(recipe), class: "readmore" %>

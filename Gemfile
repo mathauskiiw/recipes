@@ -16,6 +16,8 @@ gem 'activeadmin'
 
 gem 'devise'
 
+gem 'whenever'
+
 gem 'acts_as_votable'
 
 gem 'bootstrap', '~> 4.1', '>= 4.1.3'

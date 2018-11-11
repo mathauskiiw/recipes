@@ -1700,3 +1700,11 @@ ol {
 .user-buttons li {
 	display: inline;
 }
+
+.like i {
+	color: #007bff;
+}
+
+.deslike i {
+	color: #d44040;
+}
