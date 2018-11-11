@@ -156,6 +156,12 @@
                   <% end %>
                 </p>
                 <span>Por: <%= recipe.user.name %></span>
+
+                <% if recipe.cached_votes_score == -2 %>
+                  <%= render "layouts/notaccepted" %>
+                <% end %>
+
+
               </div>
               <%= link_to ">", recipe_path(recipe), class: "readmore" %>
 
