@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   include RecipesHelper
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.order(:cached_votes_score => :desc)
     @ingredients = Ingredient.all
     if params[:name].present?
       @ingredients = Ingredient.where("name LIKE ?", "%#{params[:name]}%")
